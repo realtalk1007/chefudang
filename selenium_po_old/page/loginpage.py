@@ -7,6 +7,7 @@ from selenium_po.page.mainpage import MainPage
 class LoginPage(BasePage):
     _username = (By.CSS_SELECTOR,".input_login:nth-child(0)")
     _password = (By.XPATH,'//*[@id="password"]')
+    _base_url = 'jx.chefudang.cn/repair-station/login/login.htm'
     # _password = (By.ID,'password')
     _login = (By.ID,'btn_login')
     def add_username(self,username):
