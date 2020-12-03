@@ -5,6 +5,7 @@ from selenium_po.page.mainpage import MainPage
 
 
 class LoginPage(BasePage):
+    _base_url = 'http://123.57.49.180:9999/#/login'
     _username = (By.LINK_TEXT,'请输入用户名')
     _password = (By.LINK_TEXT,'请输入密码')
     _login = (By.LINK_TEXT,'登 录')
