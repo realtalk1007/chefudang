@@ -1,15 +1,15 @@
 from selenium.webdriver.common.by import By
 
-from selenium_po.base import BasePage
-from selenium_po.page.mainpage import MainPage
+from selenium_po_old.base import BasePage
+from selenium_po_old.page.repairrecordspage import RepairrecordsPage
 
 
 class LoginPage(BasePage):
-    _username = (By.CSS_SELECTOR,".input_login:nth-child(0)")
+    _username = (By.XPATH,'//*[@id="oper_code"]')
     _password = (By.XPATH,'//*[@id="password"]')
-    _base_url = 'jx.chefudang.cn/repair-station/login/login.htm'
+    _base_url = 'http://jx.chefudang.cn/repair-station/login/login.htm'
     # _password = (By.ID,'password')
-    _login = (By.ID,'btn_login')
+    _login = (By.ID,'btn_dologin')
     def add_username(self,username):
         self.find_and_sendkeys(self._username,username)
         return self
@@ -20,5 +20,4 @@ class LoginPage(BasePage):
 
     def click_login(self):
         self.find_and_click(self._login)
-
-        return MainPage(self._driver)
+        return RepairrecordsPage(self._driver)
